@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - Frequently Asked Questions</title>
+		<link rel="stylesheet" href="css/faq.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm">Home</a></li>
+			<li><a href="search.htm">Search</a></li>
+			<li><a href="report_list.htm" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm" class="active">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+			<li><a href="contacts.htm">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+			<li><a href="sitemap.htm">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button type="submit">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button type="submit" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		<br><br><br><br><br>
+		<div class="wrap">
+			<h1>Frequently Asked Question</h1>
+			<div class="cards">
+				<h2>Q1: What is UniToi?</h2>
+				<br>
+				<p>
+					UniToi is a website that can help you find toilets all around the University of Sydney. Using UniToi, you can locate the 
+					toilet nearest to you, or you can also find toilets that matches your needs.
+				</p>
+			</div>
+			
+			<div class="cards">
+				<h2>Q2: Who can Use UniToi?</h2>
+				<br>
+				<p>
+					Anybody can use UniToi, as long as they are around the area of University of Sydney. Whether you are a university staff, student,
+					or visitor, you can use UniToi to find toilets all around the university.
+				</p>
+			</div>
+
+			<div class="cards">
+				<h2>Q3: How do I Find a Toilet?</h2>
+				<br>
+				<p>
+					You can use the "Quick Search" function on the Home page in order to find the nearest toilet without any filters for the toilet. 
+					You can also go to the Search page to find a toilet with applied filters in order to find a toilet that suits you! Clicking on 
+					the toilet from the search results will take you to that toilet's page, which contains more details about the toilets, 
+					including reviews left by others who have used it before.
+				</p>
+			</div>
+
+			<div class="cards">
+				<h2>Q4: Do I Need to Log In To Find a Toilet?</h2>
+				<br>
+				<p>
+					No! You can search for a toilet without having to log in. Logging in will enable you to review and report toilets.
+				</p>
+			</div>
+
+			<div class="cards">
+				<h2>Q5: What is Quick Search?</h2>
+				<br>
+				<p>
+					Quick search is a function that will instantly show you the toilet nearest to you. To use this function, simply head to our 
+					home page and press the 'Quick Search' button.
+				</p>
+			</div>
+
+			<div class="cards">
+				<h2>Q6: How do I Review a Toilet?</h2>
+				<br>
+				<p>
+					Any user, without logging in, can use the find toilet feature, but to leave reviews and react to other reviews, you will need 
+					to sign up and be logged in to your account. Only then can you review a toilet and interact with other reviews, 
+					such as leaving likes and comments. To review a toilet, find the toilet you want to review using the 'Search' function and 
+					scroll down to the review section.
+				</p>
+			</div>
+
+			<div class="cards">
+				<h2>Q7: How do I Report a Toilet?</h2>
+				<br>
+				<p>
+					There are two ways to report a toilet. The first way is by clicking the 'Report' button on the navigation bar. You will then have
+					to choose which toilet to report and fill in the report form. Another way is by using the 'Search' function, find the toilet to report,
+					and then scroll down to the 'Report' section, where you can a link to the report form page.
+				</p>
+			</div>
+			<br>
+		</div>
+	</body>
+</html>

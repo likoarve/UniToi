@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - Contacts</title>
+		<link rel="stylesheet" href="css/faq.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm">Home</a></li>
+			<li><a href="search.htm">Search</a></li>
+			<li><a href="report_list.htm" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+            <li><a href="contacts.htm" class="active">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+			<li><a href="sitemap.htm">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button type="submit">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button type="submit" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		<br><br><br><br><br>
+		<div class="wrap">
+			<h1>Contact Us!</h1>
+
+			<div class="cards">
+				<h2>Our Contacts</h2>
+				<br>
+				<p>
+					Email: suppport@unitoi.com
+                    <br>
+                    Phone: 04 1234 5678
+                    <br>
+				</p>
+                <br><br>
+                <h2>Contact Our Developers</h2>
+				<br>
+				<p>
+					Arve: lang2993@uni.sydney.edu.au
+                    <br>
+                    Lawrys: lerr2221@uni.sydney.edu.au
+                    <br>
+                    Matteo: ftjo7937@uni.sydney.edu.au
+                    <br>
+                    Lawrence: zwan2773@uni.sydney.edu.au
+				</p>
+                <br><br>
+                <h2>Our Social Media</h2>
+                <br>
+                <p>
+					Facebook: facebook.com/unitoi
+                    <br>
+                    Twitter: twitter.com/usyd_unitoi
+                    <br>
+                    Instagram: instagram.com/unitoi_official
+				</p>
+			</div>
+
+			<br>
+		</div>
+	</body>
+</html>

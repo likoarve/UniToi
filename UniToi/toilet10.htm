@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - Toilet Details</title>
+		<link rel="stylesheet" href="css/toilet.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm">Home</a></li>
+			<li><a href="search.htm" class="active">Search</a></li>
+			<li><a href="report_list.htm" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+			<li><a href="contacts.htm">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+			<li><a href="sitemap.htm">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button type="submit" class="header">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button type="submit" class="header" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>	
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		<br><br><br><br>
+        <div class="toilets">
+            <img class="cover" src="img/toilet9.jpg" alt="Toilet10">
+            <h1>Abercrombie Business School, Basement B2</h1>
+            <p>
+                800m away <br><br>
+                Rating: &#11088;&#11088;&#11088;&#11088;&#11088; 4.7/5.0<br>
+                Facilities: Shower, Handicap<br>
+                Features: Clean
+            </p>
+			<br>
+
+			<h2>Directions</h2>
+			<p>After exiting the staircase, turn around. The toilet is right under the staircase.</p>
+
+			<h2>Map</h2>
+			<img class="map" src="img/maps/abercrombie-map.png" alt="toilet10-map">
+
+			<h2>Report</h2>
+			<p>
+				Found an issue with this toilet? Notify our facility management about this issue by submitting a report 
+				<a href="report_form.htm" onclick="sessionStorage.setItem('report', 'Abercrombie Business School, Basement B2'); return isLoggedIn()">here</a>.
+			</p>
+			<br>
+			
+			<h2>Reviews</h2>
+
+			<button class="review-button" onclick="showReview()">Create a Review</button>
+			<form id="create-review" style="display:none">
+				<textarea name="review" id="review" cols="30" rows="5" placeholder="Write your review"></textarea>
+				<textarea name="rating" id="rating" cols="30" rows="1">Rating: &#11088;&#11088;&#11088;&#11088;&#11088;</textarea>
+				<button class="review-button" type="submit" onclick="createReview(review.value, rating.value); return false;">Submit Review</button>
+			</form>
+
+			<div class=review id="new-review" style="display:none">
+				<img class="profile" src="img/profile.jpg" alt="profile">
+				<span class="user">
+					<b><span id="new-review-name"></span></b><br>
+					Just now
+				</span>
+				<br><br>
+				<span class="content">
+					<span id="new-review-content"></span>
+					<br><br>
+					<span id="new-review-rating"></span>
+					<br><br>
+					<a onclick="editReview()">Edit</a> | <a onclick="deleteReview()">Delete</a> | <a>Like</a> | <a>Comment</a>
+				</span>
+			</div>
+
+			<div class=review>
+				<img class="profile" src="img/profile.jpg" alt="profile">
+				<span class="user">
+					<b>User 1</b><br>
+					3 days ago
+				</span>
+				<br><br>
+				<span class="content">
+					Really solid toilet, cleaned regularly by the staffs. A shower with hot water is also a big plus.
+					<br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088;&#11088;
+					<br><br>
+					<a>Like</a> | <a>Comment</a>
+				</span>
+			</div>
+        </div>
+
+		<br><br>
+
+	</body>
+</html>

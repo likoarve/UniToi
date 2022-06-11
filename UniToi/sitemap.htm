@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - Privacy Policy</title>
+		<link rel="stylesheet" href="css/privacy.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm">Home</a></li>
+			<li><a href="search.htm">Search</a></li>
+			<li><a href="report_list.htm" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+			<li><a href="contacts.htm">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+            <li><a href="sitemap.htm" class="active">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button type="submit">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button type="submit" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		<br><br><br><br><br>
+		<div class="wrap">
+			<h1>Site Map</h1>
+			<h2>Diagram</h2>
+		</div>
+		<img src="img/sitemap.png" alt="sitemap">
+        <br><br>
+        <div class="wrap">
+            <h2>Link to Pages</h2>
+            <b>Home</b><br>
+            <a href="home.htm">Home Page</a><br>
+            <a href="toilet1.htm">Quick Search (Nearest Toilet)</a><br><br>
+
+            <b>Signup/Login</b><br>
+            <a href="signup.htm">Signup</a><br>
+            <a href="login.htm">Login</a><br><br>
+
+            <b>Search</b><br>
+            <a href="search.htm">Toilet Filtered Search</a><br>    
+            <a href="search_results.htm">Search Result (Toilets List)</a><br>
+            <a href="toilet1.htm">Individual Toilets - School of Information Technology, Level 1</a><br>
+            <a href="toilet2.htm">Individual Toilets - Seymour Centre, Level 1</a><br>
+            <a href="toilet3.htm">Electrical Engineering Building (J03), 5th Floor</a><br>
+            <a href="toilet4.htm">Scitech Library, Level 1</a><br>
+            <a href="toilet5.htm">Wentworth Building, Level 1</a><br>
+            <a href="toilet6.htm">Carslaw Building, Main Entrance</a><br>
+            <a href="toilet7.htm">New Law Building, Level 2</a><br>
+            <a href="toilet8.htm">Fisher Library, Level 2</a><br>
+            <a href="toilet9.htm">Abercrombie Business School, Ground Floor</a><br>
+            <a href="toilet10.htm">Abercrombie Business School, Basement B2</a><br><br>
+
+            <b>Report</b><br>
+            <a href="report_list.htm">List of Toilets to Report</a><br>
+            <a href="report_form.htm">Report Form</a><br>
+            <a href="report_confirm.htm">Report Confirmation</a><br><br>
+
+            <b>Others</b><br>
+            <a href="faq.htm">Frequently Asked Questions</a><br>
+            <a href="about.htm">About Us</a><br>
+            <a href="contacts.htm">Contact Us Informations</a><br>
+            <a href="privacy.htm">Privacy Policy</a><br><br><br>
+
+			<div class="grid">
+                
+            </div>
+		</div>
+	</body>
+</html>

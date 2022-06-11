@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - Sign Up</title>
+		<link rel="stylesheet" href="css/login.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		
+		<div class="login">
+			<div class="login-wrap">
+				<span class="title">
+					Join Us!
+				</span>
+				<br><br><br>
+				<form action="login.htm" id="myform">
+					<span class="text">
+						Username
+					</span>
+					<input type="text" name="username" required>
+					<span class="text">
+						Password
+					</span>
+					<input type="password" name="password" required>
+					<button type="submit" onclick="return addUser(username.value, password.value)">Sign In</button>
+				</form>
+				<br>
+				<span class="text2 text">
+						Already have an account? <a href="./login.htm">Sign in</a> instead
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

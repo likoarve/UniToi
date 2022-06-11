@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Unitoi - Choose a Toilet!</title>
+		<link rel="stylesheet" href="css/results.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm">Home</a></li>
+			<li><a href="search.htm" class="active">Search</a></li>
+			<li><a href="report_list.htm" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+			<li><a href="contacts.htm">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+			<li><a href="sitemap.htm">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button type="submit">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button type="submit" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>	
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		<br><br><br><br>
+		<a href="toilet1.htm">
+			<div class="toilets" id="toilet1">
+				<img src="img/toilet1.jpg" alt="Toilet1">
+				<h3>School of Information Technology, Level 1</h3>
+				<p>
+					5m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088; 4.1/5.0<br>
+					Facilities: Shower, Handicap<br>
+					Features: Clean
+				</p>
+			</div>
+		</a>
+
+		<a href="toilet2.htm">
+			<div class="toilets" id="toilet2">
+				<img src="img/toilet2.jpg" alt="Toilet2">
+				<h3>Seymour Centre, Level 1</h3>
+				<p>
+					12m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088;&#11088; 4.9/5.0<br>
+					Facilities: Handicap, Unisex<br>
+					Features: High Capacity, Clean
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet3.htm">
+			<div class="toilets" id="toilet3">
+				<img src="img/toilet.jpg" alt="Toilet3">
+				<h3>Electrical Engineering Building (J03), 5th Floor</h3>
+				<p>
+					350m away <br><br>
+					Rating: &#11088;&#11088; 2.0/5.0<br>
+					Facilities: Handicap, Unisex<br>
+					Features: N/A
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet4.htm">
+			<div class="toilets" id="toilet4">
+				<img src="img/toilet4.jpg" alt="Toilet4">
+				<h3>Scitech Library, Level 1</h3>
+				<p>
+					350m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088; 4.0/5.0<br>
+					Facilities: Handicap, Baby Room<br>
+					Features: High Capacity
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet5.htm">
+			<div class="toilets" id="toilet5">
+				<img src="img/toilet5.jpg" alt="Toilet5">
+				<h3>Wentworth Building, Level 1</h3>
+				<p>
+					500m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088; 4.0/5.0<br>
+					Facilities: Handicap, Unisex<br>
+					Features: High Capacity
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet6.htm">
+			<div class="toilets" id="toilet6">
+				<img src="img/toilet6.jpg" alt="Toilet6">
+				<h3>Carslaw Building, Main Entrance</h3>
+				<p>
+					450m away <br><br>
+					Rating: &#11088;&#11088;&#11088; 3.0/5.0<br>
+					Facilities: Handicap<br>
+					Features: High Capacity
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet7.htm">
+			<div class="toilets" id="toilet7">
+				<img src="img/toilet7.jpg" alt="Toilet7">
+				<h3>New Law Building, Level 2</h3>
+				<p>
+					650m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088;&#11088; 4.6/5.0<br>
+					Facilities: Handicap, Shower<br>
+					Features: High Capacity, Clean
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet8.htm">
+			<div class="toilets" id="toilet8">
+				<img src="img/toilet8.jpg" alt="Toilet8">
+				<h3>Fisher Library, Level 2</h3>
+				<p>
+					750m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088; 4.3/5.0<br>
+					Facilities: Shower, Handicap, Unisex, Baby Room<br>
+					Features: Clean
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet9.htm">
+			<div class="toilets" id="toilet9">
+				<img src="img/toilet9.jpg" alt="Toilet9">
+				<h3>Abercrombie Business School, Ground Floor</h3>
+				<p>
+					800m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088;&#11088; 4.9/5.0<br>
+					Facilities: Handicap, Unisex, Baby Room<br>
+					Features: High Capacity, Clean
+				</p>
+			</div>
+		</a>
+		
+		<a href="toilet10.htm">
+			<div class="toilets" id="toilet10">
+				<img src="img/toilet9.jpg" alt="Toilet10">
+				<h3>Abercrombie Business School, Basement B2</h3>
+				<p>
+					800m away <br><br>
+					Rating: &#11088;&#11088;&#11088;&#11088;&#11088; 4.7/5.0<br>
+					Facilities: Shower, Handicap<br>
+					Features: Clean
+				</p>
+			</div>
+		</a>
+		
+
+
+		<br><br>
+		<script>toilets()</script>
+	</body>
+</html>

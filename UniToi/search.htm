@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - What toilets are you looking for?</title>
+		<link rel="stylesheet" href="css/search.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm">Home</a></li>
+			<li><a href="search.htm" class="active">Search</a></li>
+			<li><a href="report_list.htm" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+			<li><a href="contacts.htm">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+			<li><a href="sitemap.htm">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button class="header" type="submit">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button class="header" type="submit" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>	
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		<br><br><br><br><br><br><br>
+
+		<div class="container">
+			<div class="wrap">
+				<h1>Find a Toilet!</h1>
+				<form action="search_results.htm">
+					<input class="text" type="text" name="toiletname" placeholder="Toilet name">
+					<section class="checkbox-wrap">
+						<div class="checkbox-child">
+							<span class="text"><b>Facilities</b></span><br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="shower"> Shower <br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="handicap"> Handicap <br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="unisex"> Unisex <br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="baby"> Baby Room <br>
+						</div>
+						<div class="checkbox-child">
+							<span class="text"><b>Features</b></span><br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="near"> Near me 	&#40;&lt100m&#41; <br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="clean"> Clean <br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="rating"> High Rating <br>
+							<input class="checkbox" type="checkbox" id="myCheck" value="spacious"> High Capacity <br>
+						</div>
+					</section>
+					<button class="submit1" type="submit" onclick="addFilter(toiletname.value, myCheck)">Find Toilets</button>
+					<button class="submit2" type="submit" onclick="noFilter()">Search Without Filters</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

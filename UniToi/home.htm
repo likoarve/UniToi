@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - Home Page</title>
+		<link rel="stylesheet" href="css/home.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm" class="active">Home</a></li>
+			<li><a href="search.htm">Search</a></li>
+			<li><a href="report_list.htm" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+			<li><a href="contacts.htm">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+			<li><a href="sitemap.htm">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button class="header" type="submit">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button class="header" type="submit" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		
+		<div class="home">
+			<div class="wrap">
+				<h1>Welcome to UniToi</h1>
+				<br>
+				<h2>Start Your Toilet Search Here</h2>
+				<br><br><br>
+				<form action="toilet1.htm">
+					<button class="quickSearch" type="submit" onclick="noFilter()">Quick Search</button>
+				</form>
+			</div>	
+		</div>
+		
+		<span class="title">Our Presentation</span>
+		<video src="img/unitoi.mp4" controls></video>
+		<br><br><br>
+	</body>
+</html>

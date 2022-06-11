@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UniToi - Report Form</title>
+		<link rel="stylesheet" href="css/report.css">
+		<script src="javascript/javascript.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="logo">UniToi</li>
+			<li><a href="home.htm">Home</a></li>
+			<li><a href="search.htm">Search</a></li>
+			<li><a href="report_list.htm" class="active" onclick="return isLoggedIn()">Report</a></li>
+			<li><a href="faq.htm">FAQ</a></li>
+			<li><a href="about.htm">About Us</a></li>
+			<li><a href="contacts.htm">Contacts</a></li>
+			<li><a href="privacy.htm">Privacy</a></li>
+			<li><a href="sitemap.htm">Sitemap</a></li>
+			<div id="logged-out">
+				<li class="right">
+					<form action="login.htm">
+						<button type="submit">LOGIN</button>
+					</form>
+				</li>
+				<li class="right"><a href="signup.htm">Sign Up</a></li>
+			</div>
+			
+			<div id="logged-in">
+				<li class="right">
+					<form>
+						<button type="submit" onclick="logOut()">LOGOUT</button>
+					</form>
+				</li>
+				<li class="right"><a>Hello, <script>document.write(sessionStorage.getItem("user"))</script>!</a></li>
+			</div>
+		</ul>
+
+		<script>
+			if (sessionStorage.getItem("user")) {
+				document.getElementById("logged-out").style.display = "none";
+			} else {
+				document.getElementById("logged-in").style.display = "none";
+			}
+		</script>
+
+		<br><br><br><br><br>
+		<div class="wrap">
+			<h1>UniToi - Toilet Report Form</h1>
+			<p>
+				This report will be forwarded to the University of Sydney Facility Management for further inspection.
+			</p>
+			<br>
+            <form action="report_confirm.htm">
+                <p>
+                    1. What is the name of the toilet?
+                </p>
+                <input type="text" id="text" required>
+                <script>
+                    document.getElementById("text").defaultValue = sessionStorage.getItem("report");
+                </script>
+                <br><br>
+                <p>
+                    2. When did you use this toilet or spot the issue with this toilet?
+                </p>
+                <input type="date" name="date" id="date" required>
+                <br><br>
+                <p>
+                    3. What is the issue?
+                </p>
+                <textarea name="reason" id="reason" cols="30" rows="3"></textarea>
+                <br><br>
+                <input type="submit" value="Submit" id="button" required>
+                <br><br><br><br><br>
+            </form>
+		</div>
+		
+	</body>
+</html>
